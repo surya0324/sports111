@@ -1,0 +1,11 @@
+.player-card .card-text p{
+    margin-bottom: 0px !important;
+}
+.player-card .card-img-top{
+    background: #4e5363;
+}
+.player-card .card-img-top .userIcon{
+    height: 150px;
+    font-size: 90px;
+    text-align: center;
+}

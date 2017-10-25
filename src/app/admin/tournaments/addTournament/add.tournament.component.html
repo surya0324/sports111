@@ -1,0 +1,251 @@
+<h2 class="heading">Add Tournament
+    <a class="btn btn-sm btn-primary float-right" (click)="addTournament()"><span class="fa fa-check"></span> Save</a>
+    <a [routerLink]="['/admin/login/dashboard/tournaments',{refresh:refresh}]" class="btn btn-sm btn-primary float-right mr-10"><span class="fa fa-chevron-left"></span> Back</a>
+</h2>
+<hr class="horz-border">
+<div class="row">
+    <div class="col-md-9">
+        <form [formGroup]="tournamentForm" (submit)='onsubmit()'>
+                <div class="form-group row">
+                    <label class="col-md-4 control-label">Tournament Name</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" formControlName='name'>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-md-4 control-label">Start Date</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="date" formControlName='start_date'>
+                    </div>
+                </div>
+                <div formGroupName='organizer'>
+                    <div class="form-group row">
+                        <label class="col-md-4 control-label">Organizer Name</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" formControlName='name'>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 control-label">Organizer Contact</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" formControlName='contact'>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-4 control-label">Ground Name</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" formControlName='ground_name'>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-4 control-label">Tournament Fees</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="number" formControlName='tournament_fee'>
+                    </div>
+                </div>
+                <div formGroupName='tournamnt_format'>
+                    <div class="form-group row">
+                        <label class="col-md-4 control-label">Tournament Format</label>
+                        <div class="col-md-8">
+                            <textarea rows="5" class="form-control"  formControlName='description'></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 control-label">Format Image</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="file" formControlName='img'>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-4 control-label">No. of teams</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="number" formControlName='total_teams'>
+                    </div>
+                    
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-4 control-label">No. of pools</label>
+                    <div class="col-md-8">
+                         <input class="form-control" type="number" formControlName='total_pools'>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-4 control-label">No. of Matches</label>
+                    <div class="col-md-8">
+                         <input #matchCount class="form-control" type="number" formControlName='total_matches'>
+                    </div>
+                </div>
+                
+                
+                <!-- <div formArrayName='matches'>
+                    <div *ngFor="let ctrl of tournamentForm.controls.matches.controls; let i=index" [formGroupName]='i'>
+                    <h6 class="mt-20">Match {{i + 1}} :</h6>
+                    <div class="form-group">
+                        <label>Match ID</label>
+                        <input readonly class="form-control-plaintext form-control" type="text" formControlName = 'matchId'>
+                    </div>
+                    <div class="form-group">
+                        <label>Team-One ID</label>
+                        <input readonly class="form-control-plaintext form-control" type="text" formControlName = 'team1'>
+                    </div>
+                    <div class="form-group">
+                        <label>Team-Two ID</label>
+                        <input readonly class="form-control-plaintext form-control" type="text" formControlName = 'team2'>
+                    </div>
+                    <div formGroupName='venue'>
+                        <div class="form-group">
+                            <label>Ground Name</label>
+                            <input readonly class="form-control-plaintext form-control" type="text" formControlName = 'ground_name'>
+                        </div>
+                        <div class="form-group">
+                            <label>City</label>
+                            <input readonly class="form-control-plaintext form-control" type="text" formControlName = 'city'>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Start Time</label>
+                        <input readonly class="form-control-plaintext form-control" type="text" formControlName = 'time'>
+                    </div>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input readonly class="form-control-plaintext form-control" type="date" formControlName = 'date'>
+                    </div>
+                    <div class="form-group">
+                        <label>Match Status</label>
+                        <input readonly class="form-control-plaintext form-control" type="text" value="Open" formControlName = 'status'>
+                    </div>
+                    </div>
+                </div> -->
+            </form>
+            <div *ngIf="matchCount.value>0" class="form-subheading mb-30">
+                Add Matches 
+                <a data-toggle="modal" data-target="#matchModal" [ngClass]="{'disabled': matchCount.value==matchDetail.length}" class="btn btn-sm btn-primary float-right">
+                    <span class="fa fa-plus"></span> Add  Matches
+                </a>
+            </div>
+    </div>
+    <div class="col-md-3 tour-logo edit-image">
+        <label class="image-click" for='file-input'>
+            <div class="tour-img" *ngIf = 'tourImg!=""'>
+                <img src="../../../assets/images/{{tourImg}}"/>
+            </div>
+            <div class="tour-icon" *ngIf = 'tourImg==""'>
+                <i class='fa fa-user'></i>
+            </div>
+        </label>
+        <input class="chooseFileButton" id="file-input" accept="image/*" type="file" (change)='chooseFile($event)'/>
+    </div>
+</div>
+<div *ngIf="matchDetail.length > 0 && matchCount.value>0" class="row" style="color:#fff;">
+    <div class="col-md-12 form-subheading">
+        <label>Tournament Match Details</label>
+    </div>
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Team One</th>
+                    <th>Team Two</th>
+                    <th>Date/Time</th>
+                    <th>Ground</th>
+                    <th>Match Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let match of matchDetail; let i = index;">
+                    <td>{{match.team1_id}}</td>
+                    <td>{{match.team2_id}}</td>
+                    <td>
+                        <div>{{match.date | date: 'dd-MM-yyyy'}}</div>
+                        <div>{{match.time}}</div>
+                    </td>
+                    <td>{{match.ground}}</td>
+                    <td>{{match.match_type}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Matches modal -->
+    <div class="modal fade" id="matchModal" tabindex="-1" role="dialog"  aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Matches</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="modal-form" #matchData="ngForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Team-One Name</label>
+                                        <select #team1_id="ngModel" ngModel class="form-control" name="team1_id">
+                                            <option selected="selected" value="">Please Choose</option>
+                                            <option *ngFor="let team of teams"  [ngValue]="team._id">{{team.team_name}}</option>
+                                        </select>
+                                    </div>
+                                </div>    
+                                <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Team-Two Name</label>
+                                            <select class="form-control" #team2_id="ngModel" ngModel name="team2_id">
+                                                    <option selected="selected" value="">Please Choose</option>
+                                                    <option *ngFor="let team of teams"  [ngValue]="team._id">{{team.team_name}}</option>
+                                            </select>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Date</label>
+                                            <input #date="ngModel" name="date" ngModel class="form-control" type="date">
+                                        </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Ground Name</label>
+                                        <input #ground="ngModel" name="ground" ngModel class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Start Time</label>
+                                        <input #time="ngModel" name="time" ngModel class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Match Type</label>
+                                            <select class="form-control" #match_type="ngModel" name="match_type" ngModel>
+                                                <option selected="selected" value="">Please Choose</option>
+                                                <option value="League Stage">League Stage</option>
+                                                <option value="Knockout">Knockout</option>
+                                                <option value="Pre Quarter">Pre Quarter</option>
+                                                <option value="Quarter">Quarter</option>
+                                                <option value="Semi Final">Semi Final</option>
+                                                <option value="Final">Final</option>
+                                                <option value="Super Eight">Super Eight</option>
+                                                <option value="Super Six">Super Six</option>
+                                                <option value="Qualifier">Qualifier</option>
+                                            </select>
+                                        </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onAddMatch(matchData.value)">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+

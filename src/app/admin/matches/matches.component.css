@@ -1,0 +1,40 @@
+.matches-card{
+  background-color: #3e4050;
+  color: #d6d6d6;
+}
+.matches-card .card-header{
+  height:140px;
+  padding: 0px;
+}
+.matches-card .teams{
+  padding: 10px 10px 0px 10px;
+  font-size: 10px;
+  color: #969494;
+}
+.matches-card .teams p{
+  margin-bottom: 7px;
+}
+.matches-card .team-name .col-md-6:first-of-type{
+  border-right: 1px solid grey
+}
+.matches-card .team-name{
+  padding: 0px 10px 5px 10px;
+  font-family: Asap Condensed;
+}
+.matches-card .card-body{
+  background-color: aliceblue;
+  color: #515969;
+  padding: 5px;
+}
+.matches-card .view-more{
+  margin-top:-30px !important;
+}
+.card-text .row .col-md-6 p:first-of-type{
+  margin-bottom: 5px;
+}
+.card-text{
+  font-size:12px;
+}
+.card-text .row .col-md-6:first-of-type{
+  border-right:1px solid #d0d0d0;
+}

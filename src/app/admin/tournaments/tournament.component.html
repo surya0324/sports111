@@ -1,0 +1,26 @@
+<div>
+    <h2 class="heading">Tournaments
+        <a routerLink="/admin/login/dashboard/tournaments/add" class="btn btn-sm btn-primary float-right"><span class="fa fa-plus"></span> Tournament</a>
+    </h2>
+    <hr class="horz-border">
+    <div class="row">
+        <div class="col-md-3" *ngFor="let tournament of tournaments">
+            <div class="card admin-card">
+                <img class="card-img-top" src="../../../assets/images/{{tournament.tournament_logo}}" alt="tournament image">
+                <div class="card-body">
+                    <p class="card-text text-center">Status : {{tournament.status}}</p>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-md-6 pr-0">
+                            <a (click)="deleteTournament(tournament._id)" class="btn btn-danger btn-sm remove">Delete</a>
+                        </div>
+                        <div class="col-md-6 pl-0">
+                            <a [routerLink]="['/admin/login/dashboard/tournaments', tournament._id]" class="btn btn-primary btn-sm edit">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

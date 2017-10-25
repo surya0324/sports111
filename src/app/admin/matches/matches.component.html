@@ -1,0 +1,52 @@
+<div>
+    <h2 class="heading">Matches</h2>
+    <hr class="horz-border">
+    <div class="row">
+        <div class="col-md-3" *ngFor='let match of matches'>
+            <div class="card matches-card">
+              <div class='card-header'>
+                <div class='row teams'>
+                  <div class='col-md-6'>
+                    <p>TEAM 1</p>
+                  </div>
+                  <div class='col-md-6 text-right'>
+                    <p>TEAM 2</p>
+                  </div>
+                </div>
+                <div class='row text-center pb-5 text-small'>
+                  <div class='col-md-12'>
+                    <span><i class="fa fa-clock-o pr-5"></i>{{match.time}}</span>
+                  </div>
+                </div>
+
+                <div class='row team-name'>
+                  <div class='col-md-6'>
+                    <p>{{match.team1}}</p>
+                  </div>
+                  <div class='col-md-6 text-right'>
+                    <p>{{match.team2}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                  <div class="view-more">
+                      <span class="fa fa-eye"></span>
+                  </div>
+                  <div class="card-text">
+                    <p class='text-center'><b>{{match.tournament_name}}</b></p>
+                    <div class='row pl-10'>
+                      <div class='col-md-6'>
+                      <p class='text-small'>Starts On :</p>
+                      <p>{{match.date| date:'MM/dd/yyyy'}}</p>
+                      </div>
+                      <div class='col-md-6'>
+                        <p class='text-small'>Status:</p>
+                        <p>{{match.status}}</p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div>
+    <h2 class="heading">Teams
+      <a class="btn btn-sm btn-primary pull-right" routerLink='/admin/login/dashboard/teams/add'><i class="fa fa-plus"></i>Team</a>
+    </h2>
+
+    <hr class="horz-border">
+    <div class="row">
+        <div class="col-md-3" *ngFor = "let team of teams ">
+            <div class="card team-card">
+                <img class="card-img-top" src="../../../assets/images/{{team.logo}}" alt="team logo">
+                <div class="card-body">
+                    <div class="view-more">
+                        <a [routerLink]="['/admin/login/dashboard/teams', team._id]"><span class="fa fa-eye"></span></a>
+                    </div>
+                    <div class="card-text text-center">
+                        <p class="mb-0">Name</p>
+                        <p class="mb-0">{{team.team_name}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

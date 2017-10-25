@@ -1,0 +1,48 @@
+<div class="row bg-black admin-dashboard ml-0 mr-0">
+  <div class="col-md-3 col-xs-12 navigation mt-20 pl-70">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand md-logo" href="#">
+              <img class="image-logo" src="../../../assets/images/logo.png">
+              <span>Sports11</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+          <span class="fa fa-bars"></span>
+        </span>
+
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav flex-column nav-pills">
+          <li class="mb-10 brand-name">
+            <a class="navbar-brand" href="#">
+              <img class="image-logo" src="../../../assets/images/logo.png">
+              <span>Sports11</span>
+            </a>
+          </li>
+          <li class="mb-30 search-box">
+            <form class="form-inline">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                <span class="input-group-addon" id="basic-addon1"><span class="fa fa-search"></span></span>
+              </div>
+            </form>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/login/dashboard/tournaments" routerLinkActive="active">Tournaments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/login/dashboard/teams" routerLinkActive="active">Teams</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/login/dashboard/players" routerLinkActive="active">Players</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  </div>
+  <div class="col-md-9 col-xs-12 pr-70  menu-content mt-40 pl-40">
+    <router-outlet></router-outlet>
+  </div>
+</div>

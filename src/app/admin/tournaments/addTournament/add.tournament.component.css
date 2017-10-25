@@ -1,0 +1,68 @@
+h6{
+    font-weight: 400;
+}
+.tour-logo .fa-edit{
+    display: none;
+    position: absolute;
+    left: 30%;
+    top: 25%;
+    font-size: xx-large;
+    color: #ccc;
+  }
+  .tour-logo .fa-user{
+    color: #c4c7cd;
+    font-size: 150px;
+    cursor: pointer;
+    margin: auto;
+  }
+  .tour-logo img{
+    width:90%;
+    height:180px;
+    margin: auto;
+  }
+  .shadow-image{
+    display: none;
+    width:200px;
+    height:200px;
+    position: absolute;
+    top:0px;
+    background-color: rgba(47, 47, 47, 0.64);
+  }
+  .image-click:hover .fa{
+    display: block;
+  }
+  .image-click:hover .shadow-image{
+    display: block;
+  }
+  .image-click:hover img{
+    opacity: 0.4
+  }
+  .edit-image label.image-click{
+      pointer-events: initial!important;
+  }
+  .edit-image .chooseFileButton{
+      display: none;
+  }
+  .edit-image label{
+    width: 200px;
+    border: 1px solid #44485d;
+    height: 200px;
+  }
+  .edit-image .tour-icon, .edit-image .tour-img{
+    display: flex;
+    height: 200px;
+  }
+  .form-subheading{
+    color: #7498a6;
+}
+.table-bordered thead td, .table-bordered thead th {
+  border-bottom-width: 2px;
+  font-weight: 300;
+}
+.table td, .table th {
+  padding: 5px;
+}
+.table-bordered td, .table-bordered th {
+  border: 1px solid #5d8bac;
+  font-size: 14px;
+}

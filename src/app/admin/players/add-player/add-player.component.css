@@ -1,0 +1,40 @@
+.profile-pic .fa-edit{
+  display: none;
+  position: absolute;
+  left: 30%;
+  top: 25%;
+  font-size: xx-large;
+  color: #ccc;
+}
+.profile-pic .fa-user{
+  color: #c4c7cd;
+  font-size: 100px;
+  cursor: pointer;
+}
+.profile-pic img{
+  width:200px;
+  height:200px;
+}
+.shadow-image{
+  display: none;
+  width:200px;
+  height:200px;
+  position: absolute;
+  top:0px;
+  background-color: rgba(47, 47, 47, 0.64);
+}
+.image-click:hover .fa{
+  display: block;
+}
+.image-click:hover .shadow-image{
+  display: block;
+}
+.image-click:hover img{
+  opacity: 0.4
+}
+.edit-image label.image-click{
+    pointer-events: initial!important;
+}
+.edit-image .chooseFileButton{
+    display: none;
+}

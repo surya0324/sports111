@@ -1,0 +1,30 @@
+<div>
+    <h2 class="heading">Players
+      <a routerLink="/admin/login/dashboard/players/add" class="btn btn-sm btn-primary float-right"><span class="fa fa-plus"></span> Players</a>
+    </h2>
+    <hr class="horz-border">
+    <div class="row">
+        <div class="col-md-3 mt-10" *ngFor="let player of players">
+            <div class="card player-card">
+                <div class="card-img-top">
+                    <img *ngIf="player.profile_pic !=''" src="../../../assets/images" alt="Player image">
+                    <div class="userIcon" *ngIf="player.profile_pic ==''">
+                         <span class="fa fa-user"></span>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="view-more">
+                        <a [routerLink]="['/admin/login/dashboard/players', player._id]"><span class="fa fa-eye"></span></a>
+                    </div>
+                    <div class="card-text text-center">
+                        <p>Name </p>
+                        <p>{{player.player_name}}</p>
+                        <p>{{player.domain}}</p>
+                        <i class='fa fa-trash' (click)="deletePlayer(player._id)" ></i>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

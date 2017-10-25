@@ -1,0 +1,74 @@
+/* You can add global styles to this file, and also import other style files */
+.mt-20{
+  margin-top: 20px !important;
+}
+.mt-10{
+  margin-top: 10px !important;
+}
+.mt-30{
+  margin-top: 30px !important;
+}
+.mt-40{
+  margin-top: 40px !important;
+}
+.mb-10{
+  margin-bottom: 10px;
+}
+.mb-50{
+  margin-bottom: 50px;
+}
+.mb-0{
+  margin-bottom: 0px;
+}
+.mb-30{
+  margin-bottom: 30px;
+}
+.ml-0{
+  margin-left: 0px !important;
+}
+.mr-0{
+  margin-right: 0px !important;
+}
+.mr-10{
+  margin-right: 10px !important;
+}
+.pt-20{
+  padding-top: 20px !important;
+}
+.pl-10{
+  padding-left:10px;
+}
+.pl-0{
+  padding-left:0px;
+}
+.pl-70{
+  padding-left: 70px !important;
+}
+.pl-40{
+  padding-left: 40px !important;
+}
+.pr-0{
+  padding-right:0px;
+}
+.pr-70{
+  padding-right: 70px !important;
+}
+.bg-black{
+  background-color: #21242f;
+}
+.mlr-0{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+a:hover{
+  cursor: pointer;
+}
+.pr-5{
+  padding-right:5px !important;
+}
+.pb-5{
+  padding-bottom: 5px !important;
+}
+.text-small{
+  font-size:11px;
+}

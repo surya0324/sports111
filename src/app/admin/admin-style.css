@@ -1,0 +1,91 @@
+/* You can add global styles to this file, and also import other style files */
+
+.heading{
+  color: #a1a4a6;
+  font-weight: 300;
+}
+hr.horz-border{
+  border-top: 1px solid rgb(67, 72, 87);
+}
+.card{
+  border: none !important;
+  border-radius: 0px !important;
+}
+.card-img-top {
+    background: #44485d;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    max-width: 206px;
+    max-height: 150px;
+}
+.card .view-more{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffffff;
+    text-align: center;
+    color: #21242f;
+    font-size: 22px;
+    margin-top: -40px;
+    margin-left: 80%;
+    border: 2px solid #56585e;
+}
+.card-footer {
+    padding: 0px;
+    border-top: 0px solid rgba(0,0,0,.125);
+ }
+.card-footer .btn-sm.remove{
+    padding: 5px 32px;
+    font-size: 13px;
+}
+.card-footer .btn-sm.edit{
+    padding: 5px 40px;
+    font-size: 13px;
+}
+.btn{
+  border-radius: 0px;
+}
+.btn-sm{
+  border-radius: 0px;
+}
+.btn-primary {
+    color: #21242f !important;
+    background-color: #1997c6;
+    border-color: #1997c6;
+}
+.card-body {
+    color: #21242f;
+    font-size: 14px;
+}
+
+/*form styling*/
+form{
+    color: #7498a6;
+}
+.form-control{
+    padding: .3rem .75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #21242f;
+    background-color: #c7c8c9;
+    border-radius: 0px;
+}
+textarea{
+    resize: none;
+}
+.form-control:focus{
+    background-color: #c7c8c9;
+    border-color: #c4c7cd;
+  }
+.modal-form .form-control{
+    width: 100%;
+}
+
+select.form-control{
+    line-height: 1;
+}
+.form-control:disabled, .form-control[readonly] {
+    background-color: #c4c7cd;
+ 
+}
+

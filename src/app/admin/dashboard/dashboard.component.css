@@ -1,0 +1,85 @@
+.admin-dashboard{
+  min-height:662px;
+}
+.navbar .form-control{
+    color: #a1a4a6;
+    background-color: #434857;
+    background-clip: border-box;
+    border-right: none;
+    border-radius: 0px;
+    padding: .3rem .5rem;
+}
+.navbar .input-group-addon{
+    color: #a1a4a6;
+    background-color: #434857;
+    border-radius: 0px;
+}
+.navbar .nav-link{
+    padding: .3rem .5rem;
+}
+.navbar .nav-pills .nav-link{
+    border-radius: 0px;
+}
+a{
+  color: #a1a4a6;
+}
+.nav-pills .nav-link.active{
+  color: #21242f;
+  background-color: #1997c6;
+}
+.navbar-brand .image-logo{
+    width: 35%;
+}
+.navbar-brand.md-logo{
+    display: none;
+}
+button:focus{
+    outline: none;
+}
+@media(max-width:480px){
+    .navbar-brand .image-logo{
+        width: 25%;
+    }
+    .navbar-brand.md-logo{
+        display: inline-block;
+    }
+    .nav-pills .brand-name{
+        display: none;
+    }
+    .navigation {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        margin-top: 0px !important;
+    }
+    .navbar-toggler{
+       border: 1px solid #51586a;
+       padding: .2rem .45rem;
+    }
+    .navbar-toggler-icon .fa{
+        font-size: 23px;
+        color: #a1a4a6;
+    }
+    .navbar-toggler-icon {
+        width: 1.2em;
+        height: 1.2em;
+    }
+    .navbar-brand .image-logo{
+        margin-top: -4px;
+        margin-left: -10px;
+    }
+    .nav-pills .nav-link.active{
+        color: #21242f;
+        background-color: #8b8c8e;
+    }
+    .nav-pills .nav-link{
+        color: #a1a4a6;
+        background-color: #434857;
+    }
+    .nav-pills .search-box{
+        margin-bottom: 0px !important;
+    }
+    .menu-content{
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
