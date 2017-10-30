@@ -7,6 +7,11 @@ const api = require('./server/routes/route');
 // const db = monk('localhost:27017/practiceag2');
 const port = 9090;
 const app = express();
+
+
+
+
+
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
