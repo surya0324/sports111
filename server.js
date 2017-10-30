@@ -8,6 +8,10 @@ const api = require('./server/routes/route');
 const port = 9090;
 const app = express();
 
+
+
+
+
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
